@@ -11,7 +11,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
     	int height_l, height_r;
      /*test dev mous1*/
-    printf( "1001")
+    printf( "1001");
  /*test dev mous2*/
     printf( "001");
 	if (!tree)
