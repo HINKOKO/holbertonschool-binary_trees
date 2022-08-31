@@ -33,15 +33,13 @@ int binary_tree_balance(const binary_tree_t *tree)
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
+    size_t height_l = 0;
+	size_t height_r = 0;
         /*test dev mous4*/
             printf( "011");
 
-	size_t height_l = 0;
-	size_t height_r = 0;
     /*test dev mous5*/
         printf( "0101");
-
-
 	if (!tree)
 		return (0);
 
