@@ -32,7 +32,7 @@ void current_level(const binary_tree_t *tree, int level)
 		return;
 
 	if (level == 0)
-		printf("n = %d\n", tree->n);
+		printf("n=%d\n", tree->n);
 	else
 	{
 		current_level(tree->left, level - 1);
