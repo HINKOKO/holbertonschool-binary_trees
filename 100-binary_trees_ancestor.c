@@ -12,21 +12,22 @@
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 									 const binary_tree_t *second)
 {
-	binary_tree_t *ancestor, *oldy;
+	binary_tree_t *traveller;
 
-	oldy = second->parent;
-	if (oldy == first)
-		return (oldy);
-	oldy = first->parent;
-	if (oldy == second)
-		return (oldy);
-	ancestor = first->parent;
-	while (first->parent != second->parent)
+	if (first->parent == NULL || second->parent == NULL)
+		return (NULL);
+
+	traveller = (binary_tree_t *)second;
+	while (first)
 	{
-		if (ancestor == second->parent)
-			break;
+		while (second)
+		{
+			if (first == second)
+				return ((binary_tree_t *)first);
+			second = second->parent;
+		}
+		second = traveller;
 		first = first->parent;
-		second = second->parent;
 	}
-	return (ancestor);
+	return (NULL);
 }
