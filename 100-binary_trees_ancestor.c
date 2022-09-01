@@ -14,7 +14,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 {
 	binary_tree_t *traveller;
 
-	if (first->parent == NULL || second->parent == NULL)
+	if (first == NULL || second == NULL)
 		return (NULL);
 
 	traveller = (binary_tree_t *)second;
