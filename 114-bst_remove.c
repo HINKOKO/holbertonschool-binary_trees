@@ -27,7 +27,7 @@ bst_t *min_value(bst_t *root)
 
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *tmp;
+	bst_t *tmp = NULL;
 
 	if (!root)
 		return (root);
@@ -42,17 +42,16 @@ bst_t *bst_remove(bst_t *root, int value)
 	/* that has to be deleted */
 	else
 	{
-		tmp = root;
 		/* only one child or no child conditions */
-		if (tmp->left == NULL)
+		if (root->left == NULL)
 		{
 			tmp = root->right;
 			free(root);
 			return (tmp);
 		}
-		else if (tmp->right == NULL)
+		else if (root->right == NULL)
 		{
-			tmp = tmp->left;
+			tmp = root->left;
 			free(root);
 			return (tmp);
 		}
