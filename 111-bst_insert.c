@@ -11,37 +11,37 @@
 
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	bst_t *new;
+	bst_t *insert;
 
 	if (tree)
 	{
-		if (*tree == NULL)
+		if (!*tree)
 		{
-			new = binary_tree_node(NULL, value);
-			return (new);
+			*tree = binary_tree_node(NULL, value);
+			return (*tree);
 		}
-		new = *tree;
-		while (new)
+		insert = *tree;
+		while (insert)
 		{
-			if (new->n == value)
+			if (insert->n == value)
 				break;
-			if (new->n > value)
+			if (insert->n > value)
 			{
-				if (!new->left)
+				if (!insert->left)
 				{
-					new->left = binary_tree_node(new, value);
-					return (new->left);
+					insert->left = binary_tree_node(insert, value);
+					return (insert->left);
 				}
-				new = new->left;
+				insert = insert->left;
 			}
-			else if (new->n < value)
+			else if (insert->n < value)
 			{
-				if (!new->right)
+				if (!insert->right)
 				{
-					new->right = binary_tree_node(new, value);
-					return (new->right);
+					insert->right = binary_tree_node(insert, value);
+					return (insert->right);
 				}
-				new = new->right;
+				insert = insert->right;
 			}
 		}
 	}
